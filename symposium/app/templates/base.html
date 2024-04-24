@@ -1,0 +1,33 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% tailwind_css %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symposium 2024</title>
+</head>
+<body class="bg-0f0f0f justify-center flex w-full">
+    <div class="w-4/5">
+        <div class="flex items-center w-full justify-between">
+            <div class="m-10">
+                <img src="{% static 'img/logo.png' %}" alt="" class="w-64">
+            </div>   
+            <div class="">
+                <ul class="flex justify-between w-11/12 items-center gap-9">
+                    <a href="" class="text-white font-semibold">Activities</a>
+                    <a href="" class="text-white font-semibold">Location</a>
+                    <a href="#speakers" class="text-white font-semibold">Speakers</a>
+                    <a href="" class="text-white font-semibold">Contact</a>
+                    <button class="bg-2a2a2a h-12 w-40 rounded-3xl"><a href="" class="text-white font-semibold">Register</a></button>
+                </ul>
+            </div> 
+        </div>
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</body>
+{% block script %}
+{% endblock %}
+</html>
