@@ -1,0 +1,28 @@
+{% extends 'base_users.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block title %}  Register {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <form action="" method="post">   
+        {% csrf_token %}     
+        <input type="text" name="first_name" id="" placeholder="First Name">
+        <input type="text" name="last_name" id="" placeholder="Last Name">
+        <input type="email" name="email" id="">
+        <input type="text" name="phone_number" id="">
+        <input type="submit" value="Register">
+    </form>
+    {% endblock %}
+</body>
+{% block script %}
+<script src="{% static 'js/signup.js' %}">
+
+</script>
+{% endblock %}
+</html>

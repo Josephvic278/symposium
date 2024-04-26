@@ -7,27 +7,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Symposium 2024</title>
 </head>
-<body class="bg-0f0f0f justify-center flex w-full">
-    <div class="w-4/5">
-        <div class="flex items-center w-full justify-between">
-            <div class="m-10">
-                <img src="{% static 'img/logo.png' %}" alt="" class="w-64">
-            </div>   
-            <div class="">
-                <ul class="flex justify-between w-11/12 items-center gap-9">
-                    <a href="" class="text-white font-semibold">Activities</a>
-                    <a href="" class="text-white font-semibold">Location</a>
-                    <a href="#speakers" class="text-white font-semibold">Speakers</a>
-                    <a href="" class="text-white font-semibold">Contact</a>
-                    <button class="bg-2a2a2a h-12 w-40 rounded-3xl"><a href="" class="text-white font-semibold">Register</a></button>
-                </ul>
-            </div> 
+<body class="bg-0f0f0f">
+    <div class="justify-center flex w-full">
+        <div class="w-4/5">
+            <div class="flex items-center w-full justify-between">
+                <div class="m-10">
+                    <img src="{% static 'img/logo.png' %}" alt="" class="w-64">
+                </div>   
+                <div class="">
+                    <ul class="flex justify-between w-11/12 items-center gap-9">
+                        <a href="#activities" class="text-white font-semibold">Activities</a>
+                        <a href="#location" class="text-white font-semibold">Venue</a>
+                        <a href="#speakers" class="text-white font-semibold">Speakers</a>
+                        <a href="#contact" class="text-white font-semibold">Contact</a>
+                        <button class="bg-2a2a2a h-12 w-40 rounded-3xl"><a href="{% url 'users:register' %}" class="text-white font-semibold">Register</a></button>
+                    </ul>
+                </div> 
+            </div>
+            {% block content %}
+    
+            {% endblock %}
         </div>
-        {% block content %}
-
+    </div> 
+    <div class="bg-2a2a2a  justify-center flex">
+        <div class="w-4/5" >
+            <div class="mt-10 flex w-full justify-between">
+                <div>
+                    <img src="{% static 'img/logo.png' %}" alt="" class="w-64">
+                <p class="mt-2 text-white">The future of food: AI,
+                    Robotics and Vertical Farming</p>
+                    <div class="flex gap-2 mt-6">
+                        <img src="{% static 'img/fb.png' %}" alt="" class="w-8">
+                        <img src="{% static 'img/ig.png' %}" alt="" class="w-8">
+                        <img src="{% static 'img/x.png' %}" alt="" class="w-8">
+                    </div>
+                </div>
+                <div class="text-right">
+                    <h1 class="text-white text-center text-2xl font-bold" id="contact">Contact Us On Whatsapp</h1>
+                    <p class="mt-2 text-white">+234 902 523 9801</p>
+                    <p class="mt-2 text-white">+234 907 346 9922</p>
+                </div>
+            </div>
+            <div>
+                <h1 class="text-white text-center text-2xl font-bold">Sponsors</h1>
+            </div>
+            <div class="flex w-full justify-between mt-10 mb-10">
+                <img src="{% static 'img/google.png' %}" alt="">
+                <img src="{% static 'img/amazon.png' %}" alt="">
+                <img src="{% static 'img/indeed.png' %}" alt="">
+                <img src="{% static 'img/meta.png' %}" alt="">
+            </div>
+            <div>
+                <p class=" text-white">chukwukelunzemelvin@gmail.com</p>
+                <p class=" text-white">brightattai24@gmail.com</p>
+            </div>
+        </div>
+        {% block footer %}
+        
         {% endblock %}
     </div>
-</body>
+</body>    
+   
 {% block script %}
 {% endblock %}
 </html>
