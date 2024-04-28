@@ -1375,6 +1375,11 @@ body {
   padding-right: 10%;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .pr-60 {
   padding-right: 15rem;
 }
@@ -1389,6 +1394,18 @@ body {
 
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pr-9 {
+  padding-right: 2.25rem;
+}
+
+.pr-12 {
+  padding-right: 3rem;
+}
+
+.pr-14 {
+  padding-right: 3.5rem;
 }
 
 .text-left {
@@ -1448,6 +1465,10 @@ body {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-\[11px\] {
+  font-size: 11px;
 }
 
 .font-bold {
@@ -1557,6 +1578,10 @@ body {
     margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
   }
 
+  .lg\:pr-0 {
+    padding-right: 0px;
+  }
+
   .lg\:text-left {
     text-align: left;
   }
@@ -1568,5 +1593,10 @@ body {
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
