@@ -840,6 +840,14 @@ body {
   right: -110px;
 }
 
+.right-\[-2rem\] {
+  right: -2rem;
+}
+
+.right-\[-10rem\] {
+  right: -10rem;
+}
+
 .z-\[-1\] {
   z-index: -1;
 }
