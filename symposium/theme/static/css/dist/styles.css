@@ -872,6 +872,11 @@ body {
   margin-right: -5rem;
 }
 
+.-mx-\[7rem\] {
+  margin-left: -7rem;
+  margin-right: -7rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -1176,6 +1181,10 @@ body {
 
 .gap-9 {
   gap: 2.25rem;
+}
+
+.gap-y-9 {
+  row-gap: 2.25rem;
 }
 
 .space-x-9 > :not([hidden]) ~ :not([hidden]) {
@@ -1513,6 +1522,10 @@ body {
 
   .lg\:w-2\/5 {
     width: 40%;
+  }
+
+  .lg\:w-64 {
+    width: 16rem;
   }
 
   .lg\:translate-x-0 {
