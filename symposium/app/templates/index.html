@@ -1,217 +1,217 @@
-{% extends 'base.html' %}
-{% load static %}
-{% load static tailwind_tags %}
+    {% extends 'base.html' %}
+    {% load static tailwind_tags %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% tailwind_css %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Symposium 2024</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        {% tailwind_css %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Symposium 2024</title>
 
-</head>
-<body>
-    <div>
-        {% block content %}
-        <div class="absolute top-0 left-0">
-            <img src="{% static 'img/step_box.png' %}" alt="" class="w-28">
-        </div>
-        <div class="flex">
-            <div class="m-10">
-                <h1 class="font-extrabold text-7xl text-white">
-                    2024 Symposium
-                </h1>
-                <h2 class="font-semibold text-4xl text-white mt-7">
-                    The future of food: AI,<br class="mt-3">Robotics and Vertical Farming 
-                </h2>
-                <h3 class="font-thin text-1xl text-white mt-5">
-                    The event aims to explore how AI, robotics, <br>and vertical farming can shape the future of food production,<br> fostering discussions and insights into sustainable,<br> efficient, and innovative agricultural practices.
-                </h3>
-                <div class="flex w-2/5 gap-5 mt-5">
-                    <button class="bg-80ff44 h-12 w-40 rounded-3xl"><a href="" class="text-black font-semibold">Register</a></button>
-                    <button class="bg-2a2a2a h-12 w-40 rounded-3xl"><a href="" class="text-white font-semibold">Contact</a></button>
-                </div>
-            </div>
-            <div>
-                <img src="{% static 'img/top_img.png' %}" alt="" class="absolute w-2/4 right-0">
-            </div>
-        </div>
-        <div class="ml-10 flex gap-2 items-center">
-            <img src="{% static 'img/speaker-1.jpg' %}" alt="" class="w-10 rounded-full border-2 border-white">
-            <img src="{% static 'img/speaker-2.jpg' %}" alt="" class="w-10 rounded-full border-2 border-white">
-
-            <p class="font-semibold text-white">50+ People already registered</p>
-        </div>
-        <div class="mt-8">
-          <hr class="w-full">  
-        </div>
-        <div class="mt-32">
-            <h1 class="text-center text-4xl font-semibold text-white">The aims of the 2024 Symposium</h1>
-        </div>
-        <div class="mt-16">
-            <div class="flex w-full justify-between">
-                <div onclick="move_page(1)"><h1 class="text-white text-2xl text-left" >Enhancing Efficiency</h1><p class="text-gray_p font-xs text-center mt-2">Agricultural Efficiency through AI and Robotics</p>
-                    <div class="w-full bg-80ff44 h-1 mt-7" line_id=1>
-                    </div></div>
-                <div onclick="move_page(2)" ><h1 class="text-white text-2xl text-left" >Sustainable Solutions</h1><p class="text-gray_p font-xs text-center mt-2">Sustainable Solutions with Vertical Farming</p>
-                    <div class="w-0 bg-80ff44 h-1 mt-7 " line_id=2>
-                    </div></div>
-                <div onclick="move_page(3)" ><h1 class="text-white text-2xl text-left" >Food Innovation</h1><p class="text-gray_p font-xs text-center mt-2">Harnessing Technology for Food Innovation</p>
-                    <div class="w-0 bg-80ff44 h-1 mt-7" line_id=3>
-                    </div></div>
-            </div>
-            
-        </div>
-
-        <div class="flex mt-10 items-center" page_id = 1>
-            <div>
-                <h1 class="text-4xl font-bold text-white">
-                    Enhancing Efficiency
-                </h1>
-                <h2 class="text-white mt-5 text-wrap">
-                    This aim underscores the imperative of harnessing the transformative potential of artificial intelligence (AI) and robotics <br><br> in revolutionizing traditional farming practices. By integrating AI-driven algorithms, <br><br>autonomous machinery, and sensor technologies, the symposium aims to propel agricultural efficiency to unprecedented levels. <br><br> Participants will delve into interdisciplinary discussions, exploring how AI can optimize crop management strategies, <br><br> predict yield fluctuations, and mitigate environmental risks. Additionally, by embracing robotics, <br><br> the symposium seeks to streamline labor-intensive tasks, enhance precision farming techniques, and ultimately drive sustainable agricultural production. <br><br><a href="" class="text-80ff44 decoration-solid">Learn More &#8594;</a>
-                </h2>
-            </div>
-            <div>
-                <img src="{% static 'img/first_img.jpg' %}" alt="" class="max-w-2xl rounded-s-full">
-            </div>
-            
-        </div>
-        <div class="hidden mt-10 items-center" page_id = 2>
-            <div>
-                <h1 class="text-4xl font-bold text-white">
-                    Sustainable Solutions
-                </h1>
-                <h2 class="text-white mt-5 text-wrap mr-5">
-                    Exploring Sustainable Solutions with Vertical Farming: Vertical farming stands at the forefront of agricultural innovation, <br><br> offering a promising avenue to address the burgeoning demands of a rapidly growing population while minimizing environmental footprint. <br><br> This aim seeks to delve into the multifaceted potential of vertical farming systems, <br><br> which leverage controlled indoor environments and vertical stacking to maximize land efficiency. <br><br> Participants will embark on a journey of exploration, examining the integration of renewable energy sources, closed-loop water recycling systems, <br><br> and advanced cultivation techniques to create sustainable food production ecosystems. <br><br><a href="" class="text-80ff44 decoration-solid">Learn More &#8594;</a>
-                </h2>
-            </div>
-            <div>
-                <img src="{% static 'img/second_img.webp' %}" alt="" class="max-w-2xl rounded-s-full">
-            </div>
-            
-        </div>
-        <div class="hidden mt-10" page_id = 3>
-            <div>
-                <h1 class="text-4xl font-bold text-white">
-                    Food Innovation
-                </h1>
-                <h2 class="text-white mt-5 text-wrap">
-                    Harnessing Technology for Food Security and Innovation: In an era characterized by unprecedented global challenges, <br><br> including climate change, population growth, and food insecurity, <br><br> harnessing the power of technology has emerged <br><br>  as a pivotal strategy for securing the future of food. <br><br> This aim underscores the urgent need to leverage technological advancements, <br><br> spanning from precision agriculture and genetic engineering to digitalization and blockchain, <br><br> to address the complex dynamics of the modern food system. <br><br><a href="" class="text-80ff44 decoration-solid">Learn More &#8594;</a>
-                </h2>
-            </div>
-            <div>
-                <img src="{% static 'img/third_img.jpg' %}" alt="" class="max-w-2xl rounded-s-full">
-            </div>
-            
-        </div>
-
-        <hr class="mt-10">
-        <div class="mt-28 mb-20" id="speakers">
-            <h1 class="text-center text-4xl font-semibold text-white mt-20">Our Speakers</h1>
-            <div class="flex gap-2 w-full justify-between mt-10">
-                <div class="bg-2a2a2a rounded-t-lg rounded-b-lg">
-                    <div class="relative w-64 h-72 bg-gray-200 overflow-hidden rounded-t-lg text-left"><img src="{% static 'img/speaker-1.jpg' %}" alt="" class="absolute inset-0 w-full h-full object-cover">
-                    </div><h1 class="text-white text-1.5xl font-semibold mt-2 ml-2">EZEH KYLE</h1>
-                    <p class="text-white font-thin ml-2">Software Engineering</p>
-                </div>
-                <div class="bg-2a2a2a rounded-t-lg rounded-b-lg">
-                    <div class="relative w-64 h-72 bg-gray-200 overflow-hidden rounded-t-lg text-left"><img src="{% static 'img/speaker-2.jpg' %}" alt="" class="absolute inset-0 w-full h-full object-cover">
-                    </div><h1 class="text-white text-1xl font-semibold mt-2 ml-2">KALU DIVINE</h1>
-                    <p class="text-white font-thin ml-2">Tech Enthusiast</p>
-                </div>
-                <div class="bg-2a2a2a rounded-t-lg rounded-b-lg">
-                    <div class="relative w-64 h-72 bg-gray-200 overflow-hidden rounded-t-lg text-left"><img src="{% static 'img/speaker-3.jpg' %}" alt="" class="absolute inset-0 w-full h-full object-cover">
-                    </div><h1 class="text-white text-1xl font-semibold mt-2 ml-2">CHIAGOZIE MELVIN</h1>
-                    <p class="text-white font-thin ml-2">Web Developer</p>
-                </div>
-            </div>
-        </div>
-        <div class="justify-center flex w-full">
-            <div class=" flex justify-between w-4/5">
-                <div class="bg-2a2a2a flex items-center w-60 rounded-xl">
-                     <img src="{% static 'img/clock.png' %}" alt="" class="w-12 m-5">
-                     <div class="text-white">
-                         <p class="font-medium text-xl">Time</p>
-                         <p>9am</p>
-                     </div>
-                </div>
-                <div class="bg-2a2a2a flex items-center w-60 rounded-xl">
-                 <img src="{% static 'img/date.png' %}" alt="" class="w-12 m-5">
-                 <div class="text-white">
-                     <p class="font-medium text-xl">Date</p>
-                     <p>22nd May, 2024</p>
-                 </div>
-            </div>
-        </div>
-        </div>
-        <hr class="mt-10">
-        <div class="absolute right-0">
-            <img src="{% static 'img/step_up_box.png' %}" alt="" class="w-28">
-        </div>
-        <div class="">
-            <h1 class="text-center text-4xl font-semibold text-white mt-20" id="activities">Activities</h1>
-            <div class="flex justify-between w-full mt-10">
-                <div class="p-4 bg-2a2a2a w-80 rounded-lg h-80">
-                    <img src="{% static 'img/quiz.png' %}" alt="" class="w-14">
-                    <h1 class="text-white font-semibold text-2xl mt-2">Quiz</h1>
-                    <p class="mt-5 text-white">Attendees can look forward to a dynamic and interactive experience at the conference, with engaging quizzes seamlessly integrated into various sessions and activities.</p>
-                </div>
-                <div class="p-4 bg-2a2a2a w-80 rounded-lg h-80">
-                    <img src="{% static 'img/workshop.png' %}" alt="" class="w-14">
-                    <h1 class="text-white font-semibold text-2xl mt-2">Workshop</h1>
-                    <p class="mt-5 text-white">Participants can anticipate an enriching and hands-on experience through a series of engaging workshops at the conference. These workshops offer attendees the opportunity to delve deeper into specific topics, gain practical skills.</p>
-                </div>
-                <div class="p-4 bg-2a2a2a w-80 rounded-lg h-80">
-                    <img src="{% static 'img/qanda.png' %}" alt="" class="w-14">
-                    <h1 class="text-white font-semibold text-2xl mt-2">Question and Answer</h1>
-                    <p class="mt-5 text-white">
-                        Attendees can look forward to stimulating question and answer sessions throughout the conference, providing valuable opportunities for interaction, discussion, and knowledge sharing.
-                    </p>
-                </div>
-            </div>
-            <div class="flex justify-center w-full mt-10">
-                <div class="w-3/4 flex justify-between">
-                    <div class="p-4 bg-2a2a2a w-80 rounded-lg h-80">
-                        <img src="{% static 'img/networking.png' %}" alt="" class="w-14">
-                        <h1 class="text-white font-semibold text-2xl mt-2">Networking Events</h1>
-                        <p class="mt-5 text-white">At the conference, attendees can look forward to a series of dynamic networking events designed to foster connections, collaboration, and community-building among participants.</p>
-                    </div>
-    
-                    <div class="p-4 bg-2a2a2a w-80 rounded-lg h-80">
-                        <img src="{% static 'img/exhibition.png' %}" alt="" class="w-14">
-                        <h1 class="text-white font-semibold text-2xl mt-2">Exhibitions</h1>
-                        <p class="mt-5 text-white">At the conference, attendees can immerse themselves in a dynamic exhibition space filled with innovative products, services, and solutions from industry-leading organizations and vendors. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr class="mt-10">
-        <div class="absolute left-0">
+    </head>
+    <body>
+        
+            {% block content %}
+            <div class="w-full px-[10%]">
+            <div class="absolute top-0 left-0">
                 <img src="{% static 'img/step_box.png' %}" alt="" class="w-28">
             </div>
-        <div class="p-20" id="location">
-            <div class="flex justify-between">
-                <div>
-                    <h1 class="text-white text-4xl font-semibold">Venue</h1>
-                    <h2 class="text-white text-1xl font-semibold mt-2">Federal University of Technology, Owerri (FUTO), Owerri, Imo State, Nigeria</h2>
-    
-                    <p class="w-1/2 mt-2 text-white font-thin">The Hall of Excellence at FUTO stands as a testament to the university's commitment to academic excellence, innovation, and leadership in the fields of science, engineering, and technology. Situated at the heart of the campus, this prestigious hall serves as a focal point for celebrating the achievements of students, faculty members, alumni, and distinguished guests who have made significant contributions to their respective fields and to society at large.</p>
+            <div class="flex flex-col lg:flex-row mt-10 lg:mt-0 relative">
+                <div class="m-10 w-full">
+                    <h1 class="font-extrabold text-7xl text-white">
+                        2024 Symposium
+                    </h1>
+                    <h2 class="font-semibold text-4xl text-white mt-7">
+                        The future of food: AI,<br class="mt-3">Robotics and Vertical Farming 
+                    </h2>
+                    <h3 class="font-thin text-1xl text-white mt-5">
+                        The event aims to explore how AI, robotics, <br>and vertical farming can shape the future of food production,<br> fostering discussions and insights into sustainable,<br> efficient, and innovative agricultural practices.
+                    </h3>
+                    <div class="flex w-full lg:w-2/5 gap-5 mt-5">
+                        <button class="bg-80ff44 h-12 w-40 rounded-3xl"><a href="" class="text-black font-semibold">Register</a></button>
+                        <button class="bg-2a2a2a h-12 w-40 rounded-3xl"><a href="" class="text-white font-semibold">Contact</a></button>
+                    </div>
                 </div>
                 <div>
-                    <iframe class="h-80 w-80 rounded-lg border-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.1854988619075!2d6.988432574990979!3d5.3886757353095724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10425dcecdcddefd%3A0x300a4f8d506bec7e!2sHall%20Of%20Excellence%201000%20Cap.%20FUTO!5e0!3m2!1sen!2sng!4v1714049819437!5m2!1sen!2sng" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <img src="{% static 'img/top_img.png' %}" alt="" class="w-full relative right-[-110px] mb-7 lg:absolute lg:w-2/4 lg:right-0">
                 </div>
             </div>
-        </div>
-        {% endblock %}
-    </div>
-    {% block footer %}
+            <div class="ml-10 flex gap-2 items-center w-full">
+                <img src="{% static 'img/speaker-1.jpg' %}" alt="" class="w-10 rounded-full border-2 border-white">
+                <img src="{% static 'img/speaker-2.jpg' %}" alt="" class="w-10 rounded-full border-2 border-white">
+
+                <p class="font-semibold text-white">50+ People already registered</p>
+            </div>
+            <div class="mt-8">
+              <hr class="w-full translate-x-[7rem] lg:translate-x-0">  
+            </div>
+            <div class="mt-32">
+                <h1 class="text-center text-4xl font-semibold text-white translate-x-[7rem] lg:translate-x-0">The aims of the 2024 Symposium</h1>
+            </div>
+            <div class="mt-16">
+                <div class="flex w-full justify-between space-x-[33.3%] lg:space-x-0">
+                    <div onclick="move_page(1)"><h1 class="text-white text-lg lg:text-2xl text-left mr-1" >Enhancing Efficiency</h1><p class="text-gray_p text-[10px] lg:text-lg text-center lg:text-left mt-2 whitespace-pre-line">Agricultural Efficiency through AI and Robotics</p>
+                        <div class="w-full bg-80ff44 h-1 mt-7" line_id=1>
+                        </div></div>
+                    <div onclick="move_page(2)" ><h1 class="text-white text-lg lg:text-2xl text-left" >Sustainable Solutions</h1><p class="text-gray_p text-[10px] lg:text-lg text-center lg:text-left mt-2 whitespace-pre-line">Sustainable Solutions with Vertical Farming</p>
+                        <div class="w-0 bg-80ff44 h-1 mt-7 " line_id=2>
+                        </div></div>
+                    <div onclick="move_page(3)" ><h1 class="text-white text-lg lg:text-2xl text-left" >Food Innovation</h1><p class="text-gray_p text-[10px] lg:text-lg text-center lg:text-left mt-2 whitespace-pre-line">Harnessing Technology for Food Innovation</p>
+                        <div class="w-0 bg-80ff44 h-1 mt-7" line_id=3>
+                        </div></div>
+                </div>
+                
+            </div>
+
+            <div class="flex flex-col lg:flex-row mt-10 items-center" page_id = 1>
+                <div class="translate-x-[7rem] lg:translate-x-0 -mx-[5rem] lg:mx-0">
+                    <h1 class="text-4xl font-bold text-white">
+                        Enhancing Efficiency
+                    </h1>
+                    <h2 class="text-white mt-5 text-wrap">
+                        This aim underscores the imperative of harnessing the transformative potential of artificial intelligence (AI) and robotics <br><br> in revolutionizing traditional farming practices. By integrating AI-driven algorithms, <br><br>autonomous machinery, and sensor technologies, the symposium aims to propel agricultural efficiency to unprecedented levels. <br><br> Participants will delve into interdisciplinary discussions, exploring how AI can optimize crop management strategies, <br><br> predict yield fluctuations, and mitigate environmental risks. Additionally, by embracing robotics, <br><br> the symposium seeks to streamline labor-intensive tasks, enhance precision farming techniques, and ultimately drive sustainable agricultural production. <br><br><a href="" class="text-80ff44 decoration-solid">Learn More &#8594;</a>
+                    </h2>
+                </div>
+                <div class="translate-x-[6rem] lg:translate-x-0">
+                    <img src="{% static 'img/first_img.jpg' %}" alt="" class="max-w-2xl rounded-s-full scale-[0.8] lg:scale-[1]">
+                </div>
+                
+            </div>
+            <div class="hidden mt-10 items-center flex flex-col lg:flex-row mt-10" page_id = 2>
+                <div class="translate-x-[7rem] lg:translate-x-0 -mx-[5rem] lg:mx-0">
+                    <h1 class="text-4xl font-bold text-white">
+                        Sustainable Solutions
+                    </h1>
+                    <h2 class="text-white mt-5 text-wrap mr-5">
+                        Exploring Sustainable Solutions with Vertical Farming: Vertical farming stands at the forefront of agricultural innovation, <br><br> offering a promising avenue to address the burgeoning demands of a rapidly growing population while minimizing environmental footprint. <br><br> This aim seeks to delve into the multifaceted potential of vertical farming systems, <br><br> which leverage controlled indoor environments and vertical stacking to maximize land efficiency. <br><br> Participants will embark on a journey of exploration, examining the integration of renewable energy sources, closed-loop water recycling systems, <br><br> and advanced cultivation techniques to create sustainable food production ecosystems. <br><br><a href="" class="text-80ff44 decoration-solid">Learn More &#8594;</a>
+                    </h2>
+                </div>
+                <div class="translate-x-[6rem] lg:translate-x-0">
+                    <img src="{% static 'img/second_img.webp' %}" alt="" class="max-w-2xl rounded-s-full scale-[0.8] lg:scale-[1]">
+                </div>
+                
+            </div>
+            <div class="hidden mt-10 flex flex-col lg:flex-row mt-10 items-center" page_id = 3>
+                <div class="translate-x-[7rem] lg:translate-x-0 -mx-[5rem] lg:mx-0">
+                    <h1 class="text-4xl font-bold text-white">
+                        Food Innovation
+                    </h1>
+                    <h2 class="text-white mt-5 text-wrap">
+                        Harnessing Technology for Food Security and Innovation: In an era characterized by unprecedented global challenges, <br><br> including climate change, population growth, and food insecurity, <br><br> harnessing the power of technology has emerged <br><br>  as a pivotal strategy for securing the future of food. <br><br> This aim underscores the urgent need to leverage technological advancements, <br><br> spanning from precision agriculture and genetic engineering to digitalization and blockchain, <br><br> to address the complex dynamics of the modern food system. <br><br><a href="" class="text-80ff44 decoration-solid">Learn More &#8594;</a>
+                    </h2>
+                </div>
+                <div class="translate-x-[6rem] lg:translate-x-0">
+                    <img src="{% static 'img/third_img.jpg' %}" alt="" class="max-w-2xl rounded-s-full scale-[0.8] lg:scale-[1]">
+                </div>
+                
+            </div>
+
+            <hr class="mt-10 translate-x-[7rem]">
+            <div class="mt-28 mb-20" id="speakers">
+                <h1 class="text-center text-4xl font-semibold text-white mt-20 translate-x-[7rem] lg:translate-x-0">Our Speakers</h1>
+                <div class="flex flex-col lg:flex-row gap-2 w-full justify-between mt-10 translate-x-[7rem] lg:translate-x-0 gap-y-9">
+                    <div class="bg-2a2a2a rounded-t-lg rounded-b-lg pb-4">
+                        <div class="relative w-full lg:w-64 h-72 bg-gray-200 overflow-hidden rounded-t-lg text-left"><img src="{% static 'img/speaker-1.jpg' %}" alt="" class="absolute inset-0 w-full h-full object-cover">
+                        </div><h1 class="text-white text-1.5xl font-semibold mt-3 ml-2">EZEH KYLE</h1>
+                        <p class="text-white font-thin ml-2">Software Engineering</p>
+                    </div>
+                    <div class="bg-2a2a2a rounded-t-lg rounded-b-lg pb-4">
+                        <div class="relative w-full lg:w-64 h-72 bg-gray-200 overflow-hidden rounded-t-lg text-left"><img src="{% static 'img/speaker-2.jpg' %}" alt="" class="absolute inset-0 w-full h-full object-cover">
+                        </div><h1 class="text-white text-1xl font-semibold mt-3 ml-2">KALU DIVINE</h1>
+                        <p class="text-white font-thin ml-2">Tech Enthusiast</p>
+                    </div>
+                    <div class="bg-2a2a2a rounded-t-lg rounded-b-lg pb-4">
+                        <div class="relative w-full lg:w-64 h-72 bg-gray-200 overflow-hidden rounded-t-lg text-left"><img src="{% static 'img/speaker-3.jpg' %}" alt="" class="absolute inset-0 w-full h-full object-cover">
+                        </div><h1 class="text-white text-1xl font-semibold mt-3 ml-2">CHIAGOZIE MELVIN</h1>
+                        <p class="text-white font-thin ml-2">Web Developer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="justify-center flex w-full">
+                <div class=" flex justify-between w-full lg:w-4/5 translate-x-[7rem] space-x-5">
+                    <div class="bg-2a2a2a flex items-center w-60 rounded-xl pr-14 lg:pr-0">
+                         <img src="{% static 'img/clock.png' %}" alt="" class="w-12 m-5">
+                         <div class="text-white">
+                             <p class="font-medium text-lg lg:text-xl">Time</p>
+                             <p>9am</p>
+                         </div>
+                    </div>
+                    <div class="bg-2a2a2a flex items-center w-60 rounded-xl pr-14 lg:pr-0">
+                     <img src="{% static 'img/date.png' %}" alt="" class="w-12 m-5">
+                     <div class="text-white">
+                         <p class="font-medium text-lg lg:text-xl">Date</p>
+                         <p class="text-[11px] whitespace-nowrap">22nd May, 2024</p>
+                     </div>
+                </div>
+            </div>
+            </div>
+            <hr class="mt-10 translate-x-[7rem] lg:translate-x-0">
+            <div class="absolute lg:right-0 right-[-10rem]">
+                <img src="{% static 'img/step_up_box.png' %}" alt="" class="w-28">
+            </div>
+            <div class="translate-x-[7rem] lg:translate-x-0">
+                <h1 class="text-center text-4xl font-semibold text-white mt-20" id="activities">Activities</h1>
+                <div class="flex flex-col lg:flex-row gap-y-9 justify-between w-full mt-10">
+                    <div class="p-4 bg-2a2a2a w-80 rounded-lg h-80">
+                        <img src="{% static 'img/quiz.png' %}" alt="" class="w-14">
+                        <h1 class="text-white font-semibold text-2xl mt-2">Quiz</h1>
+                        <p class="mt-5 text-white">Attendees can look forward to a dynamic and interactive experience at the conference, with engaging quizzes seamlessly integrated into various sessions and activities.</p>
+                    </div>
+                    <div class="p-4 bg-2a2a2a w-80 rounded-lg h-80">
+                        <img src="{% static 'img/workshop.png' %}" alt="" class="w-14">
+                        <h1 class="text-white font-semibold text-2xl mt-2">Workshop</h1>
+                        <p class="mt-5 text-white">Participants can anticipate an enriching and hands-on experience through a series of engaging workshops at the conference. These workshops offer attendees the opportunity to delve deeper into specific topics, gain practical skills.</p>
+                    </div>
+                    <div class="p-4 bg-2a2a2a w-80 rounded-lg h-80">
+                        <img src="{% static 'img/qanda.png' %}" alt="" class="w-14">
+                        <h1 class="text-white font-semibold text-2xl mt-2">Question and Answer</h1>
+                        <p class="mt-5 text-white">
+                            Attendees can look forward to stimulating question and answer sessions throughout the conference, providing valuable opportunities for interaction, discussion, and knowledge sharing.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex justify-center w-full mt-10">
+                    <div class="w-full lg:w-3/4 flex flex-col lg:flex-row gap-y-9 justify-between">
+                        <div class="p-4 bg-2a2a2a w-80 rounded-lg h-80">
+                            <img src="{% static 'img/networking.png' %}" alt="" class="w-14">
+                            <h1 class="text-white font-semibold text-2xl mt-2">Networking Events</h1>
+                            <p class="mt-5 text-white">At the conference, attendees can look forward to a series of dynamic networking events designed to foster connections, collaboration, and community-building among participants.</p>
+                        </div>
         
+                        <div class="p-4 bg-2a2a2a w-80 rounded-lg h-80">
+                            <img src="{% static 'img/exhibition.png' %}" alt="" class="w-14">
+                            <h1 class="text-white font-semibold text-2xl mt-2">Exhibitions</h1>
+                            <p class="mt-5 text-white">At the conference, attendees can immerse themselves in a dynamic exhibition space filled with innovative products, services, and solutions from industry-leading organizations and vendors. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-10 translate-x-[7rem] lg:translate-x-0">
+            <div class="absolute left-0">
+                    <img src="{% static 'img/step_box.png' %}" alt="" class="w-28">
+                </div>
+            <div class="p-20" id="location">
+                <div class="flex justify-between flex-col lg:flex-row mt-16 lg:mt-0">
+                    <div>
+                        <h1 class="text-white text-4xl font-semibold">Venue</h1>
+                        <h2 class="text-white text-sm font-semibold mt-2 whitespace-nowrap -translate-x-[5rem] lg:translate-x-0">Federal University of Technology, Owerri (FUTO), Owerri, Imo State, Nigeria</h2>
+        
+                        <p class="w-[100vw] mb-5 lg:w-1/2 mt-2 text-white font-thin">The Hall of Excellence at FUTO stands as a testament to the university's commitment to academic excellence, innovation, and leadership in the fields of science, engineering, and technology. Situated at the heart of the campus, this prestigious hall serves as a focal point for celebrating the achievements of students, faculty members, alumni, and distinguished guests who have made significant contributions to their respective fields and to society at large.</p>
+                    </div>
+                    <div>
+                        <iframe class="h-80 w-80 rounded-lg border-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.1854988619075!2d6.988432574990979!3d5.3886757353095724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10425dcecdcddefd%3A0x300a4f8d506bec7e!2sHall%20Of%20Excellence%201000%20Cap.%20FUTO!5e0!3m2!1sen!2sng!4v1714049819437!5m2!1sen!2sng" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+                </div>
+            {% endblock %}
+        {% block footer %}
+            
+        {% endblock %}
+    </body>
+    {% block script %}
+    <script src="{% static 'js/landing_page.js' %}">
+    </script>
     {% endblock %}
-</body>
-{% block script %}
-<script src="{% static 'js/landing_page.js' %}">
-</script>
-{% endblock %}
-</html>
+    </html>
