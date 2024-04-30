@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% block title %}  Register {% endblock %}
+    {% block title %}  Admin Login {% endblock %}
 </head>
 <body >
     {% block content %}
@@ -19,17 +19,13 @@
                     <img src="{% static 'img/signup.png' %}" alt="">
             </div>
             <div class="justify-center flex w-full mb-10">
-                <h1 class="text-white font-extrabold text-2xl md:text-4xl">Haven't registered yet?</h1>
+                <h1 class="text-white font-extrabold text-2xl md:text-4xl">Admin Login</h1>
             </div>
             <form action="" method="post" class="p-10 bg-2a2a2a rounded-xl">   
                 {% csrf_token %}     
-                <div class="w-full justify-between flex items-center">
-                    <input type="text" name="" id="first_name" placeholder="First Name" required class="w-2/5 bg-transparent  border-0 border-white border-b">
-                <input type="text" name="" id="last_name" placeholder="Last Name" required class="w-2/5 bg-transparent  border-0 border-white border-b">
-                </div>
                 <input type="email" name="" id="email" required class="w-full bg-transparent  border-0 border-white border-b mt-20" placeholder="Email Address"><br>
                 <input type="text" name="" id="phone_number" required class="w-full bg-transparent  border-0 border-white border-b mt-20" placeholder="Phone Number"><br>
-                <input type="button" value="Register" onclick="sign_up()" class="mt-20 w-full h-12 bg-80ff44 rounded-lg" id="main_btn">
+                <input type="button" value="Register" onclick="sign_in()" class="mt-20 w-full h-12 bg-80ff44 rounded-lg" id="main_btn">     
                 <button class="mt-20 w-full h-12 bg-80ff44 rounded-lg hidden justify-center items-center" id="loader_btn">
                     <div role="status">
                         <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-black" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +34,7 @@
                         </svg>
                     </div>
                 </button>
-                <p class="text-white mt-5 ">Are you an admin? Login here <a href="{% url 'users:login' %}" class="text-80ff44">Login Here</a></p>
+                <p class="text-white mt-5 ">Not an admin? <a href="{% url 'users:register' %}" class="text-80ff44">Signup Here</a></p>
             </form>
         </div>
     </div>
@@ -49,14 +45,15 @@
           <div class="text-lg font-semibold mb-4" id="error_titile">Error</div>
           <p id="error_tag"></p>
           <!-- Close button -->
-          <button class="mt-6 px-4 py-2 bg-2a2a2a text-white rounded-md hover:bg-80ff44" onclick="closePopup()">Close</button>
+
+          <button id="db_download" class="hidden mt-6 px-4 py-2 bg-2a2a2a text-white rounded-md hover:bg-80ff44" onclick="closePopup()">Download registration record</button>
         </div>
       </div>
       
     {% endblock %}
 </body>
 {% block script %}
-<script src="{% static 'js/signup.js' %}"></script>
+<script src="{% static 'js/signin.js' %}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {% endblock %}
 </html>

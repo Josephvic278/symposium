@@ -1,6 +1,4 @@
 function validate_form(){
-    first_name = document.getElementById('first_name').value
-    last_name = document.getElementById('last_name').value
     email = document.getElementById('email').value
     phone_number = document.getElementById('phone_number').value
 
@@ -13,7 +11,7 @@ function validate_form(){
         return false;
     }
 
-    if (first_name === '' || last_name ==='' || phone_number === '' || email === '') {
+    if ( phone_number === '' || email === '') {
         false
     }
     return true
@@ -24,9 +22,7 @@ function open_error(message){
     document.getElementById('error_box').style.display='flex'
 }
 
-function sign_up(){
-    first_name = document.getElementById('first_name').value
-    last_name = document.getElementById('last_name').value
+function sign_in(){
     email = document.getElementById('email').value
     phone_number = document.getElementById('phone_number').value
 
@@ -34,8 +30,6 @@ function sign_up(){
     url = window.location.href
 
     data = {
-        'first_name': first_name,
-        'last_name': last_name,
         'email': email,
         'phone_number': phone_number
     }
@@ -54,10 +48,12 @@ function sign_up(){
 
                         if (responce['status']=='fail'){
                             open_error(responce['message'])
+                            document.getElementById('db_download').style.display = 'none'
                         }
                         if (responce['status']=='success'){
-                            document.getElementById('error_titile').textContent = 'Registeration Successfull'
+                            document.getElementById('error_titile').textContent = 'Admin login Successfull'
                             open_error(responce['message'])
+                            document.getElementById('db_download').style.display = 'block'
                         }
                     }
                 },

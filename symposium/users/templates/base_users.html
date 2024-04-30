@@ -1,11 +1,13 @@
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% tailwind_css %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2024 Symposium | {% block title %} {% endblock %}</title>
 </head>
-<body>
+<body class="bg-0f0f0f">
     {% block content %}
     {% endblock %}
 </body>
