@@ -29,6 +29,7 @@ function sign_up(){
     last_name = document.getElementById('last_name').value
     email = document.getElementById('email').value
     phone_number = document.getElementById('phone_number').value
+    register_as = $("#network option:selected").attr('value')
 
     var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
     url = window.location.href
