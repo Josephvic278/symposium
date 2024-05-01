@@ -16,11 +16,15 @@ def signup(request):
         email = data.get('email')
         phone_number = data.get('phone_number')
         username = random.choice(string.ascii_letters)
+        registered_as = data.get('registered_as')
+        faculty = data.get('faculty')
+        department = data.get('department')
+
         if User.objects.filter(email=email).exists() or User.objects.filter(phone_number=phone_number).exists():
             return JsonResponse({'message':'User has already been registered','status':'fail'})
         else:
             user = User.objects.create(
-                first_name=first_name, last_name=last_name, phone_number=phone_number, email=email,username = username
+                first_name=first_name, last_name=last_name, phone_number=phone_number, email=email,username = username, registered_as = registered_as, faculty=faculty, department=department
             )
             user.save()
 

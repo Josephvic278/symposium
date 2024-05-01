@@ -81,5 +81,4 @@ function sign_in(){
 function closePopup(){
     document.getElementById('database').style.display = 'block'
     document.getElementById('error_box').style.display='none'
-    
 }
