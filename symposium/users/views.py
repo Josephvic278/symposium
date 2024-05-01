@@ -10,6 +10,7 @@ from io import BytesIO
 def signup(request):
     if request.method == 'POST':
         data = request.POST
+        print(data)
         first_name = data.get('first_name')
         last_name = data.get('last_name')
         email = data.get('email')
@@ -31,24 +32,21 @@ def signup(request):
 
 def login(request):
     users = User.objects.all()
-    try:
-        if request.method == 'POST':
-            data = request.POST
-            email = data.get('email')
-            phone_number = data.get('phone_number')
 
-            if email == 'mainadmin@gmail.com':
-                user = User.objects.filter(phone_number=phone_number, email=email)
-                if user is not None:
-                    return JsonResponse({'message':'Welcome Admin', 'status':'success'})
-                else:
-                    print(False)
+    if request.method == 'POST':
+        data = request.POST
+        email = data.get('email')
+        phone_number = data.get('phone_number')
+        
+        if email == 'mainadmin@gmail.com':
+            user = User.objects.filter(phone_number=phone_number, email=email)
+            if user is not None:
+                return JsonResponse({'message':'Welcome Admin', 'status':'success'})
             else:
-                return JsonResponse({'message':'User is not an admin', 'status':'fail'})
-    except:
-        if request.method == 'POST':
-            data = request.POST
-            print(data)
+                print(False)
+        else:
+            return JsonResponse({'message':'User is not an admin', 'status':'fail'})
+            
     return render(request, 'login.html', {'users':users})
 
 def export_excel(request):

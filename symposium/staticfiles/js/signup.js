@@ -31,7 +31,9 @@ function sign_up(){
     phone_number = document.getElementById('phone_number').value
     register_as = $("#register_as option:selected").val()
     faculty = $("#faculty option:selected").val()
+    department = document.getElementById('department').value
 
+    alert(department)
 
     var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
     url = window.location.href
