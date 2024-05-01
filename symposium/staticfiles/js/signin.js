@@ -1,6 +1,4 @@
 function validate_form(){
-    first_name = document.getElementById('first_name').value
-    last_name = document.getElementById('last_name').value
     email = document.getElementById('email').value
     phone_number = document.getElementById('phone_number').value
 
@@ -13,7 +11,7 @@ function validate_form(){
         return false;
     }
 
-    if (first_name === '' || last_name ==='' || phone_number === '' || email === '') {
+    if ( phone_number === '' || email === '') {
         false
     }
     return true
@@ -24,26 +22,16 @@ function open_error(message){
     document.getElementById('error_box').style.display='flex'
 }
 
-function sign_up(){
-    first_name = document.getElementById('first_name').value
-    last_name = document.getElementById('last_name').value
+function sign_in(){
     email = document.getElementById('email').value
     phone_number = document.getElementById('phone_number').value
-    register_as = $("#register_as option:selected").val()
-    faculty = $("#faculty option:selected").val()
-
 
     var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
     url = window.location.href
 
     data = {
-        'first_name': first_name,
-        'last_name': last_name,
         'email': email,
-        'phone_number': phone_number,
-        'registered_as': register_as,
-        'faculty': faculty,
-        'department': department
+        'phone_number': phone_number
     }
 
     function run_request(){
@@ -60,10 +48,12 @@ function sign_up(){
 
                         if (responce['status']=='fail'){
                             open_error(responce['message'])
+                            document.getElementById('db_download').style.display = 'none'
                         }
                         if (responce['status']=='success'){
-                            document.getElementById('error_titile').textContent = 'Registeration Successfull'
+                            document.getElementById('error_titile').textContent = 'Admin login Successfull'
                             open_error(responce['message'])
+                            document.getElementById('db_download').style.display = 'block'
                         }
                     }
                 },
@@ -89,5 +79,7 @@ function sign_up(){
 }
 
 function closePopup(){
+    document.getElementById('database').style.display = 'block'
     document.getElementById('error_box').style.display='none'
+    
 }

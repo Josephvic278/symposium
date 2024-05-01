@@ -30,6 +30,7 @@ function sign_up(){
     email = document.getElementById('email').value
     phone_number = document.getElementById('phone_number').value
     register_as = $("#register_as option:selected").val()
+    faculty = $("#faculty option:selected").val()
 
 
     var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
