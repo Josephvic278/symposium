@@ -10,9 +10,6 @@
 </head>
 <body >
     {% block content %}
-    <div class="fixed  bg-2a2a2a w-1/5 h-28 border-b-2 border-80ff44 -right-80" id="erorr_box">
-
-    </div>
     <div class="w-full h-full justify-center items-center flex mt-10">
         <div class="w-11/12 md:w-4/5 lg:w-3/5 xl:w-1/2">
             <div class="justify-center flex w-full mb-10">
@@ -46,10 +43,52 @@
           <p id="error_tag"></p>
           <!-- Close button -->
 
-          <button id="db_download" class="hidden mt-6 px-4 py-2 bg-2a2a2a text-white rounded-md hover:bg-80ff44" onclick="closePopup()">Download registration record</button>
+          <button id="db_download" class="mt-6 px-4 py-2 bg-2a2a2a text-white rounded-md hover:bg-80ff44" onclick="closePopup()">Download registration record</button>
         </div>
       </div>
-      
+      <div class="fixed inset-0 items-center justify-center bg-white z-50 hidden" id="database">
+        <div class="flex w-full justify-between">  
+        </div>
+        <div >
+          <button class="h-10 w-28 bg-80ff44 rounded-lg right-0 absolute m-4" onclick="print()"><a href="{% url 'users:export_excel' %}">Download</a></button>
+        </div>
+        <div class="mt-20">
+          {% for user in users %}
+          <div class="bg-white mb-3 flex w-full justify-between p-4">
+            {% if forloop.first %}
+            <div class="w-1/4"><h1 class="font-bold text-2xl">Email</h1>
+              {{user.email}}
+            </div>
+            <div class="w-1/4"><h1 class="font-bold text-2xl">Names</h1>
+              {{user.first_name}} {{user.last_name}}
+            </div>
+            <div class="w-1/4"><h1 class="font-bold text-2xl">Phone Number</h1>
+              {{user.phone_number}}
+            </div>
+            <div class="w-1/4"><h1 class="font-bold text-2xl">Date Registered</h1>
+              {{user.date_joined}}
+            </div>
+          </div>
+            {% else %}
+            <div class="w-1/4">
+              {{user.email}}
+            </div>
+            <div class="w-1/4">
+              {{user.first_name}} {{user.last_name}}
+            </div>
+            <div class="w-1/4">
+              {{user.phone_number}}
+            </div>
+            <div class="w-1/4">
+              {{user.date_joined}}
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+      </div>
+      <div>
     {% endblock %}
 </body>
 {% block script %}

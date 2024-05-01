@@ -14,9 +14,6 @@
         
             {% block content %}
             <div class="w-full px-[10%]">
-            <div class="absolute top-0 left-0">
-                <img src="{% static 'img/step_box.png' %}" alt="" class="w-28">
-            </div>
             <div class="flex flex-col lg:flex-row mt-10 lg:mt-0 relative">
                 <div class="m-10 w-full">
                     <h1 class="font-extrabold text-7xl text-white">
@@ -34,7 +31,7 @@
                     </div>
                 </div>
                 <div>
-                    <img src="{% static 'img/top_img.png' %}" alt="" class="w-full relative right-[-110px] mb-7 lg:absolute lg:w-2/4 lg:right-0">
+                    <img src="{% static 'img/top_img.png' %}" alt="" class="w-full relative right-[-110px] mb-7 lg:absolute lg:w-2/4 lg:right-0 sm:hidden">
                 </div>
             </div>
             <div class="ml-10 flex gap-2 items-center w-full">
@@ -153,7 +150,7 @@
             <div class="translate-x-[7rem] lg:translate-x-0">
                 <h1 class="text-center text-4xl font-semibold text-white mt-20" id="activities">Activities</h1>
                 <div class="flex flex-col lg:flex-row gap-y-9 justify-between w-full mt-10">
-                    <div class="p-4 bg-2a2a2a w-80 rounded-lg h-80">
+                    <div class="min-[1023px]:w-full p-4 bg-2a2a2a w-80 rounded-lg h-80 ">
                         <img src="{% static 'img/quiz.png' %}" alt="" class="w-14">
                         <h1 class="text-white font-semibold text-2xl mt-2">Quiz</h1>
                         <p class="mt-5 text-white">Attendees can look forward to a dynamic and interactive experience at the conference, with engaging quizzes seamlessly integrated into various sessions and activities.</p>
@@ -195,7 +192,7 @@
                 <div class="flex justify-between flex-col lg:flex-row mt-16 lg:mt-0">
                     <div>
                         <h1 class="text-white text-4xl font-semibold">Venue</h1>
-                        <h2 class="text-white text-sm font-semibold mt-2 whitespace-nowrap -translate-x-[5rem] lg:translate-x-0">Federal University of Technology, Owerri (FUTO), Owerri, Imo State, Nigeria</h2>
+                        <h2 class="text-white text-sm font-semibold mt-2">Federal University of Technology, Owerri (FUTO), Owerri, Imo State, Nigeria</h2>
         
                         <p class="w-[100vw] mb-5 lg:w-1/2 mt-2 text-white font-thin">The Hall of Excellence at FUTO stands as a testament to the university's commitment to academic excellence, innovation, and leadership in the fields of science, engineering, and technology. Situated at the heart of the campus, this prestigious hall serves as a focal point for celebrating the achievements of students, faculty members, alumni, and distinguished guests who have made significant contributions to their respective fields and to society at large.</p>
                     </div>
