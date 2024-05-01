@@ -33,6 +33,7 @@ function sign_up(){
     faculty = $("#faculty option:selected").val()
     department = document.getElementById('department').value
 
+    alert(department)
 
     var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
     url = window.location.href
