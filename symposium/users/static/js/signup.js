@@ -29,7 +29,8 @@ function sign_up(){
     last_name = document.getElementById('last_name').value
     email = document.getElementById('email').value
     phone_number = document.getElementById('phone_number').value
-    register_as = $("#network option:selected").attr('value')
+    register_as = $("#register_as option:selected").val()
+
 
     var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
     url = window.location.href
@@ -38,7 +39,10 @@ function sign_up(){
         'first_name': first_name,
         'last_name': last_name,
         'email': email,
-        'phone_number': phone_number
+        'phone_number': phone_number,
+        'registered_as': register_as,
+        'faculty': faculty,
+        'department': department
     }
 
     function run_request(){

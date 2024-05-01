@@ -35,10 +35,6 @@ INSTALLED_APPS = [
 
 TAILWIND_APP_NAME = 'theme'
 
-INTERNAL_IPS = [
-    "127.0.0.8",
-]
-
 # NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 NPM_BIN_PATH = "/usr/local/bin/npm"
 
